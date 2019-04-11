@@ -14,6 +14,5 @@ def load_googlenews():
     Approx time: 3 mins
     '''
     model_googlenews = gensim.models.KeyedVectors.load_word2vec_format('models/GoogleNews-vectors-negative300.bin',binary=True)
-    model_googlenews.simi
     return model_googlenews
 

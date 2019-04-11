@@ -13,7 +13,7 @@ def vectorize_user(model, screen_name, limit=0):
     for tweet in tweet_list:
         tv=vectorize_tweet(model, tweet.text)
         tweet_vectors.append(tv)
-    return np.sum(tweet_vectors,axis=0)
+    return np.mean(tweet_vectors,axis=0)
 
 def vectorize_tweet(model, tweet):
     word_vectors = []
@@ -22,5 +22,5 @@ def vectorize_tweet(model, tweet):
         if word.lower() not in stop:
             wv=model.wv[word.lower()]
             word_vectors.append(wv)
-    return np.sum(word_vectors,axis=0)
+    return np.mean(word_vectors,axis=0)
 
